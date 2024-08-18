@@ -1,0 +1,375 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-top: 50px; /* Sesuaikan dengan tinggi navbar Anda */
+    background: linear-gradient(145deg, #FFCDE3, #B5E6E2, #FFFF, #E1FDCF);
+}
+
+.navbar {
+    background-color: rgba(128, 128, 128, 0.5); /* Transparan abu-abu */
+    position: fixed; /* Membuat navbar tetap */
+    width: 100%; /* Memastikan navbar mengambil lebar penuh */
+    top: 0; /* Menempatkan navbar di bagian atas layar */
+    z-index: 1000; /* Mengatur z-index agar navbar selalu di atas konten lain */
+    transition: background-color 0.3s; /* Efek transisi saat mengubah warna latar belakang */
+    border-radius: 15px; /* Add border radius to navbar */
+}
+
+.navbar-left {
+    float: left;
+}
+
+.navbar-right {
+    float: right;
+}
+
+.navbar-item {
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    position: relative; /* Menjadikan posisi relatif untuk pseudo-element */
+    border-radius: 15px; /* Add border radius to navbar items */
+}
+
+.navbar-item::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #B5E6E2; /* Perbaiki kode warna */
+    transition: width 0.3s;
+    border-radius: 15px; /* Add border radius to navbar item underline */
+}
+
+.navbar-item:hover::after {
+    width: 100%;
+}
+
+.navbar-item:hover {
+    background-color: #ddd;
+    color: #333;
+}
+
+/* Styles for transparent buttons */
+/* Styles for the button container */
+.button-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #FFCDE3, #B5E6E2, #FFFF, #E1FDCF);
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+.transparent-button {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    color: #4f4f4f;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.transparent-button i {
+    margin-right: 5px;
+}
+
+.transparent-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #000;
+}
+
+.header {
+    background-image: url('Wanwan.jpg'); /* Replace 'your_background_image.jpg' with the path to your background image */
+    background-size: cover; /* Adjust background size as needed */
+    background-position: center; /* Adjust background position as needed */
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    width: 80%;
+}
+
+.header-picture {
+    width: 150px; /* Adjust the width as needed */
+    height: 150px;
+    border-radius: 20%;
+    margin-right: 20px; /* Adjust the margin as needed */
+}
+
+.header-content {
+    flex: 1;
+}
+
+.header-text h3 {
+    margin: 0;
+    font-size: 24px; /* Adjust the font size as needed */
+}
+
+.header-text p {
+    margin: 5px 0 0; /* Adjust the margin as needed */
+    font-size: 16px; /* Adjust the font size as needed */
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.left-container {
+    flex: 1;
+    border-radius: 15px; /* Add border radius to left container */
+    margin-bottom: 20px; /* Add margin between the two containers */
+    border: 1px solid #ccc; /* Add border to each container */
+    background: linear-gradient(145deg, #B5E6E2, #FFFF); /* Set background color for each container */
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.left-container h2 {
+    margin-top: 0;
+}
+
+.left-container input[type="text"] {
+    width: calc(100% - 18px); /* Adjust input width to accommodate border */
+    padding: 8px;
+    margin-bottom: 10px;
+    border: none; /* Remove border */
+    border-radius: 50px;
+    font-size: 16px;
+    outline: none; /* Remove default focus outline */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /* Add inset box shadow for input focus */
+}
+
+.right-container {
+    flex: 2;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.top-right-container h2,
+.bottom-right-container h2 {
+    margin-top: 0;
+}
+
+.top-right-container {
+    flex: 1;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #B5E6E2, #FFFF);
+    border: 1px solid #ccc;
+    margin-bottom: 20px; /* Add margin to separate from left container */
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.top-right-container input[type="text"] {
+    width: calc(100% - 18px); /* Adjust input width to accommodate border */
+    padding: 8px;
+    margin-bottom: 10px;
+    border: none; /* Remove border */
+    border-radius: 50px;
+    font-size: 16px;
+    outline: none; /* Remove default focus outline */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /* Add inset box shadow for input focus */
+    display: block;
+    margin-bottom: 10px;
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the start of the container */
+}
+
+.input-item {
+    flex: 1; /* Each item takes equal space */
+    margin-right: 45px; /* Add spacing between input items */
+}
+
+.input-item:last-child {
+    margin-right: 0; /* Remove margin from last input item */
+}
+
+.input-item label {
+    display: block; /* Display label as block element */
+    margin-bottom: 5px; /* Add spacing between label and input */
+}
+
+.input-item input[type="text"] {
+    width: calc(100% - 20px); /* Adjust input width to accommodate border */
+    padding: 13px;
+    margin-bottom: 10px;
+    border: none; /* Remove border */
+    border-radius: 50px;
+    font-size: 16px;
+    outline: none; /* Remove default focus outline */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /* Add inset box shadow for input focus */
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+.bottom-right-container {
+    flex: 1;
+    border-radius: 15px; /* Add border radius to bottom-right container */
+    border: 1px solid #ccc;
+    background: linear-gradient(145deg, #B5E6E2, #FFFF);
+    margin-right: 20px; /* Add margin to separate from left container */
+    padding: 20px;
+}
+
+.button-group {
+    flex-grow: 1; /* Fill remaining vertical space */
+    display: flex;
+    justify-content: space-between; /* Distribute columns evenly */
+}
+
+.button-column {
+    flex: 1; /* Each column fills available horizontal space */
+    display: flex;
+    flex-direction: column;
+}
+
+.left-buttons {
+    margin-right: 10px; /* Add right margin for space between left and right buttons */
+}
+
+.right-buttons {
+    margin-left: 10px; /* Add left margin for space between left and right buttons */
+}
+
+.nominal-button.cart-button{
+    flex-grow: 1; /* Each button fills available vertical space */
+    margin-bottom: 5%; /* Add bottom margin for space between buttons */
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 50px; /* Add border radius to buttons */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 100%;
+}
+
+.nominal-button.cart-button {
+    background-color: #00afac;
+    color: #fff;
+    width: 410px;
+    flex-grow: unset;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100%;
+}
+
+.nominal-button.cart-button i {
+    margin-right: 10px; /* Adjust margin between icon and text */
+}
+
+/* Styles for item container */
+.item-container {
+    flex-grow: 1; /* Each container fills available vertical space */
+    margin-bottom: 5%; /* Add bottom margin for space between containers */
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 50px; /* Add border radius to containers */
+    text-align: center;
+    cursor: pointer;
+    font-size: 100%;
+    transition: background-color 0.3s; /* Add transition for hover effect */
+}
+
+.item-container:hover {
+    background-color: rgba(128, 128, 128, 0.1); /* Lighten background color on hover */
+}
+
+/* Styles for price label */
+#price-label {
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 7px;
+    padding: 10px;
+    padding-left: 20px; /* Adjust padding-left to shift the text slightly to the right */
+    font-size: 15px;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 15px; /* Menambahkan border-radius untuk membuat kurva */
+}
+
+.cart-button {
+    margin-top: 20px; /* Menambahkan jarak ke tombol Cart */
+}
+
+/* Style for radio buttons */
+.item-container {
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.radio-button-label {
+    flex-grow: 1; /* Each container fills available vertical space */
+    margin-bottom: 5%; /* Add bottom margin for space between containers */
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 50px; /* Add border radius to containers */
+    text-align: center;
+    cursor: pointer;
+    font-size: 100%;
+    transition: background-color 0.3s; /* Add transition for hover effect */
+}
+
+.radio-button-label span {
+    font-size: 16px;
+}
+
+.radio-button-label:hover {
+    background-color: #e9ecef; /* Change background color on hover */
+    border-color: #adb5bd; /* Change border color on hover */
+}
+
+/* Style for selected radio button */
+.button-column input[type="radio"] {
+    display: none;
+}
+
+.button-column input[type="radio"]:checked + .radio-button-label {
+    background: linear-gradient(145deg, #B5E6E2, #FFFF, #E1FDCF);
+}
+
+.input-item input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 0, 0, .8); /* Change border color to red */
+    border-radius: 40px;
+    font-size: 16px;
+    color: #1fa030;
+    padding: 10px;
+}
