@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HonestPedia</title>
+    <link rel="stylesheet" href="pricem.css">
+    <script src="https://kit.fontawesome.com/c695495eed.js" crossorigin="anonymous"></script>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="#" class="navbar-item">Profile</a>
+            <a href="../Home/Home.html" class="navbar-item"><i class="fa-solid fa-house"></i>Home</a>
+            <a href="../Transaction/transaction.html" class="navbar-item"><i class="fa-solid fa-file-invoice"></i>Transaction</a>
+            <a href="../Profile/profile.php" class="navbar-item"><i class="fa-solid fa-user-large"></i>Info Account</a>
+            <a href="../Cart/cart.php" class="navbar-item"><i class="fa-solid fa-cart-shopping"></i>Cart</a>
+        </div>
+        <div class="navbar-right">
+            <a href="../SignIn/login.html" class="navbar-item">Sign In</a>
+            <a href="../SignUp/register.html" class="navbar-item">Sign Up</a>
+        </div>
+    </nav>
+    
+    <!-- Header div -->
+    <div class="header">
+        <div class="header-container">
+            <img src="../Pricelist/Lylia.jpg" alt="Your Picture" class="header-picture">
+            <div class="header-content">
+                <div class="header-text">
+                    <h3>Mobile Legends</h3>
+                    <p>Moontoon</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="button-container">
+        <div class="transparent-button-container">
+            <button class="transparent-button"><i class="fas fa-shield-alt"></i> Safety Insurance</button>
+        </div>
+        <div class="transparent-button-container">
+            <button class="transparent-button"><i class="far fa-clock"></i> 24 Hours Service</button>
+        </div>
+        <div class="transparent-button-container">
+            <button class="transparent-button"><i class="fas fa-lock"></i> Trusted and Safety Payments</button>
+        </div>
+        <div class="transparent-button-container">
+            <button class="transparent-button"><i class="fas fa-rocket"></i> Fast & Automatic Process</button>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="left-container">
+            <h2>Description</h2>
+            <p>HonestPedia mempersembahkan penawaran istimewa untuk para gamers sejati! Kami hadir dengan layanan Top Up resmi dan 100% legal untuk Mobile Legends : Bang Bang , yang dirancang khusus untuk meningkatkan pengalaman bermain game Anda. Nikmati kemudahan, keamanan, dan harga yang terjangkau dalam setiap transaksi Top Up Anda.</p>
+            <p>Top Up Mobile Legends : Bang Bang Resmi, Murah, Aman, & Terpercaya</p>
+            
+        </div>
+        <div class="right-container">
+            <form action="submit.php" method="post">
+                <h2>Fill your Account</h2>
+                <div class="input-group">
+                    <div class="input-item">
+                        <label for="game_id">ID</label>
+                        <input type="text" id="game_id" name="game_id" placeholder="Your Game ID">
+                    </div>
+                    <div class="input-item">
+                        <label for="server">Server</label>
+                        <input type="text" id="server" name="server" placeholder="Your Game Server">
+                    </div>
+                </div>
+                <h2>Choose The Item</h2>
+                <div class="button-group">
+                    <div class="button-column left-buttons">
+                        
+                            <input type="radio" name="items" id="diamond_257" value="257 Diamond" onclick="selectNominal('257 Diamond', '50000')">
+                            <label for="diamond_257" class="radio-button-label"><span>257 Diamond</span></label>
+                        
+                        
+                            <input type="radio" name="items" id="diamond_300" value="300 Diamond" onclick="selectNominal('300 Diamond', '78000')">
+                            <label for="diamond_300" class="radio-button-label"><span>300 Diamond</span></label>
+                        
+                        
+                            <input type="radio" name="items" id="diamond_560" value="560 Diamond" onclick="selectNominal('560 Diamond', '150000')">
+                            <label for="diamond_560" class="radio-button-label"><span>560 Diamond</span></label>
+                        
+                    </div>
+                    <div class="button-column right-buttons">
+                        
+                            <input type="radio" name="items" id="diamond_1115" value="1115 Diamond" onclick="selectNominal('1115 Diamond', '225000')">
+                            <label for="diamond_1115" class="radio-button-label"><span>1115 Diamond</span></label>
+                        
+                            <input type="radio" name="items" id="diamond_2050" value="2050 Diamond" onclick="selectNominal('2050 Diamond', '378000')">
+                            <label for="diamond_2050" class="radio-button-label"><span>2050 Diamond</span></label>
+                        
+                        
+                            <input type="radio" name="items" id="diamond_7070" value="7070 Diamond" onclick="selectNominal('7070 Diamond', '1700000')">
+                            <label for="diamond_7070" class="radio-button-label"><span>7070 Diamond</span></label>
+                        
+                    </div>
+                </div>
+                <div id="price-label"></div> <!-- Show label price -->
+                <!-- Hidden input field for price -->
+                <input type="hidden" id="price" name="price">
+                <button class="nominal-button cart-button" onclick="addToCart()"><i class="fas fa-shopping-cart"></i>Add to Cart</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Function to select the item
+        function selectNominal(item, price) {
+            selectedNominal = { item: item, price: price };
+            document.getElementById('price-label').innerText = "Price: Rp." + price;
+            document.getElementById('selectedItem').value = item;
+            document.getElementById('price').value = price;
+        }
+
+        // Function to add the selected item to the cart
+        function addToCart() {
+            if (selectedNominal) {
+                // Set the price value to the hidden input field
+                document.getElementById('price').value = selectedNominal.price;
+                
+                // Submit the form
+                document.querySelector('form').submit();
+            } else {
+                alert("Please select an item before adding to cart.");
+            }
+        }
+    </script>
+
+</body>
+</html>
