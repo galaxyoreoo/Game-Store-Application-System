@@ -1,0 +1,198 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Mengatur konten di sebelah kiri halaman */
+  min-height: 100vh;
+  background: linear-gradient(145deg, #FFCDE3, #B5E6E2, #FFFF, #E1FDCF);
+  background-size: cover;
+  background-position: center;
+}
+
+.navbar {
+  background-color: rgba(128, 128, 128, 0.5); /* Transparan abu-abu */
+  position: fixed; /* Membuat navbar tetap */
+  width: 100%; /* Memastikan navbar mengambil lebar penuh */
+  top: 0; /* Menempatkan navbar di bagian atas layar */
+  z-index: 1000; /* Mengatur z-index agar navbar selalu di atas konten lain */
+  transition: background-color 0.3s; /* Efek transisi saat mengubah warna latar belakang */
+}
+
+.navbar-left {
+  float: left;
+}
+
+.navbar-right {
+  float: right;
+}
+
+.navbar-item {
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  position: relative; /* Menjadikan posisi relatif untuk pseudo-element */
+}
+
+.navbar-item::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #B5E6E2; /* Perbaiki kode warna */
+  transition: width 0.3s;
+}
+
+.navbar-item:hover::after {
+  width: 100%;
+}
+
+.navbar-item:hover {
+  background-color: #ddd;
+  color: #333;
+}
+
+.search-container {
+  margin-top: 65px; /* Menyesuaikan margin atas agar tidak tertutupi oleh navbar */
+  margin-left: 50px; /* Memberikan margin kiri agar konten berada di sebelah kiri halaman */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Mengatur konten di sebelah kiri */
+}
+
+.input-container {
+  margin-bottom: 10px;
+}
+
+.invoice-label {
+  display: block;
+  margin-bottom: 5px;
+  margin-right: auto;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+.invoice-input {
+  padding: 10px;
+  width: 300px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px; /* Tambahkan margin-bottom di sini */
+}
+
+.find-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #509AA2;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-right: auto;
+  margin-top: 25px;
+}
+
+.find-button:hover {
+  background-color: #0056b3;
+}
+
+.container {
+  border: 3px solid #509AA2;
+  border-radius: 5px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  max-width: 1000px;
+  margin: auto;
+  width: 1000px;
+  margin-top: 20px; /* Menambahkan margin atas */
+  margin-right: auto; /* Mengatur posisi ke tengah */
+  margin-left: auto; /* Mengatur posisi ke tengah */
+  text-align: center; /* Mengatur teks menjadi rata tengah */
+}
+
+.column {
+  font-weight: bold;
+}
+
+.transaction-table {
+  width: 100%; /* Menjadi 100% lebar dari .content-wrapper */
+  margin-top: 1rem; /* Jika Anda ingin sedikit ruang antara search-container dan transaction-table */
+}
+
+.table-header {
+  display: flex;
+  width: 100%; /* Pastikan header memenuhi container */
+  justify-content: space-between;
+  background-color: #509AA2;
+  color: #fff;
+  border-radius: 0.25rem 0.25rem 0 0;
+  padding: 0.5rem;
+}
+
+.header-item {
+  flex: 1;
+  text-align: center;
+}
+
+/* Menempatkan elemen-elemen di sebelah kiri halaman */
+.page-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 20px; /* Menyesuaikan margin kiri */
+}
+
+/* Menyesuaikan gaya elemen span */
+.invoice-label {
+  margin-bottom: 10px; /* Menambahkan ruang di bawah elemen */
+  font-weight: bold;
+}
+
+/* Menyesuaikan gaya elemen input */
+.invoice-input {
+  width: 100%; /* Memanjangkan input hingga penuh lebar container */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px; /* Menambahkan ruang di bawah elemen */
+}
+
+/* Menyesuaikan gaya elemen tombol */
+.find-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #509AA2;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px; /* Menambahkan ruang di atas elemen */
+}
+
+.find-button:hover {
+  background-color: #FF1F82;
+}
+
+.additional-container {
+  width: 100%; /* Mengambil lebar penuh dari container sebelumnya */
+  height: 400px; /* Menetapkan tinggi 100px */
+  background-color: #fff; /* Warna latar belakang */
+  margin-top: 20px; /* Jarak antara container baru dan container sebelumnya */
+  border: 1px solid #ccc; /* Garis tepi container */
+  border-radius: 5px; /* Bentuk sudut container */
+  position: relative; /* Menjadikan posisi relatif */
+  top: 20px; /* Menambahkan jarak ke atas */
+  border-color: #509AA2;
+  border-width: 3px;
+}
